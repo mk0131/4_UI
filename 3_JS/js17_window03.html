@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let ids = ["multi", "java", "script", "mkjo", "jmg", "soo"];
+
+        function confirmChk() {
+            let id = document.getElementsByName("id")[0].value;
+
+            let div = document.getElementById("msg");
+
+            if (ids.indexOf(id) != -1) {
+                div.innerHTML = "<b>아이디가 존재합니다</b>"
+            } else {
+                let userId = "사용할 수 있는 아이디입니다.<br>"
+                    + "<input type = 'button' value='확인' onclick='insertId(\"" + id + "\")'>"; // id 값 넘기기 위해 \" 사용
+                div.innerHTML = userId;
+            }
+        }
+        function insertId(id) {
+            opener.document.getElementsByName("id")[0].value = id; // 부모 창 에서 이름이 id 인 곳에 밸류값 넘기기
+            opener.document.getElementsByName("pw")[0].focus(); // 비밀번호 입력 으로 넘어간다
+            window.close();
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>I D</td>
+            <td><input type="text" name="id"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="중복확인" onclick="confirmChk()">
+                <input type="button" value="취소" onclick="self.close()">
+                <!-- self.close()는 자신  window.close() 는 보고있는창 -->
+            </td>
+        </tr>
+    </table>
+    <div id="msg"></div>
+</body>
+
+</html>

@@ -98,6 +98,13 @@
         function arrTest4() {
             // toString() : 배열을 문자열로 반환한다.
             let arr = ['나는', '올해', '부터', '술을', '안마신다'];
+
+            console.log(arr);
+            console.log(arr.toString('.'));
+            console.log(arr);
+
+            console.log(arr.join());
+            console.log(arr.join('/'));
         }
     </script>
 </head>
@@ -111,7 +118,7 @@
     <h3>array객체의 메소드</h3>
     <button onclick="arrTest2()">클릭!!</button>
     <button onclick="arrTest3()">클릭!!!</button>
-    <button onabort="arrTest4()">클릭!!!!</button>
+    <button onclick="arrTest4()">클릭!!!!</button>
 </body>
 
 </html>
