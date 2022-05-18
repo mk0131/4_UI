@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .cls {
+      width: 200px;
+      height: 200px;
+      background: red;
+      color: white;
+      word-wrap: break-word;
+      /* 글자 잘리지 않게하기*/
+      font-size: 30pt;
+    }
+
+    .tlate {
+      transform: translate(50px, 50px);
+    }
+
+    .trotate {
+      transform: rotate(75deg);
+    }
+
+    .tscale {
+      transform: scale(0.4, 0.5);
+    }
+
+    #tran:hover {
+      width: 700px;
+      background-color: blue;
+      transform: translate(300px, 0px);
+    }
+
+    #tran {
+      transition: width 0.5s, background 1.5s linear
+        /*일정하게 변환*/
+        ,
+        transform 1.5s;
+    }
+
+    li {
+      width: 500px;
+      background: pink;
+      margin-bottom: 5px;
+      font-size: 30pt;
+      font-weight: bold;
+      list-style-type: none;
+      transition: width 1s, color 1s, letter_spacing 1s;
+      cursor: pointer;
+    }
+
+    li:hover {
+      width: 800px;
+      color: white;
+      letter-spacing: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>transform - translate</h2>
+  <div class="cls tlate">translate(x,y) : 위치 이동</div>
+  <br />
+  <br />
+  <h2>transform - rotate</h2>
+  <div class="cls trotate">rotate(deg) : 회전</div>
+  <br />
+  <br />
+  <h2>transform - scale</h2>
+  <div class="cls tscale">scale(x,y) : 크기</div>
+  <br />
+  <br />
+  <h2>transform - 속성전환</h2>
+  <div id="tran" class="cls">transition</div>
+  <div>
+    <h2>MainMenu</h2>
+    <ul>
+      <li>COMPANY</li>
+      <li>PRODUCT</li>
+      <li>SERVICE</li>
+      <li>COMMUNITY</li>
+      <li>CUSTOMER SUPPORT</li>
+    </ul>
+  </div>
+</body>
+
+</html>

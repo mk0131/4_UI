@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert title here</title>
+    <style>
+        div {
+            background-color: yellow;
+            width: 400px;
+            height: 150px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function easy() {
+            let username = document.getElementsByTagName("input")[0].value;
+            let product = document.getElementsByTagName("input")[1].value;
+            let price = document.getElementsByTagName("input")[2].value;
+            let text = document.getElementById("text");
+
+            text.innerHTML = ("구입자 : " + username + "님<br>" + "구입상품 : " + product + "<br>" + "구매가격 : " + price + "만원");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>연습 1</h1>
+    <a>구매자 : <input type="text" value="" id="by"> </a>
+    <br>
+    <br>
+    <a>상품명 : <input type="text" value="" id="pd"> </a>
+    <br>
+    <br>
+    <a>가격 : <input type="text" value="" id="pr"> </a>
+    <br>
+    <br>
+    <input type="button" value="입력값 출력하기" onclick="easy()">
+    <br>
+    <br>
+    <div id="text">
+    </div>
+</body>
+
+</html>

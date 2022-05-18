@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습2</title>
+    <style>
+        #div1 {
+            width: 150px;
+            height: 150px;
+            background-color: black;
+            border: 1px solid black;
+        }
+
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function change() {
+            let color = document.getElementById("bg").value;
+            let ground = document.getElementById("div1");
+            ground.style.backgroundColor = color;
+        }
+        function small() {
+            let size = document.getElementById("div2");
+            size.style.width = "50px";
+            size.style.height = "50px";
+        }
+        function middle() {
+            let size = document.getElementById("div2");
+            size.style.width = "100px";
+            size.style.height = "100px";
+        }
+        function big() {
+            let size = document.getElementById("div2");
+            size.style.width = "200px";
+            size.style.height = "200px";
+        }
+    </script>
+</head>
+
+<body>
+    <h3>문제 1. 색상 선택후 변경 버튼을 클릭하면 색상이 변경되도록 만들어 보시오</h3>
+    <div id="div1"></div>
+    <input type="color" id="bg">
+    <button onclick="change()">변경</button>
+    <hr>
+    <h3>문제 2. 버튼에 따른 크기 조절이 가능하게 만들어 보세요.</h3>
+    <div id="div2"></div>
+    <button onclick="small()">50x50</button>
+    <button onclick="middle()">100x100(원본)</button>
+    <button onclick="big()">200x200</button>
+</body>
+
+</html>

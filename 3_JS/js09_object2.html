@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let test1 = () => {
+            let product = {
+                pName: '노트북',
+                type: '컴퓨터',
+                price: 200,
+                spec: [100, 'window10'],
+                'i love': 'you'
+            }
+            console.log(product);
+            console.log("객체명['속성명']으로 접근하기----------------");
+            console.log(product['pName']);
+            console.log(product['type']);
+            console.log(product['price']);
+            console.log(product['spec'][1]);
+            console.log("객체명.속성명 으로 접근하기 -----------------");
+            console.log(product.pName);
+            console.log(product.type);
+            console.log(product.price);
+            console.log(product.spec[0]);
+
+            //
+            console.log("키는 모든 문자열 사용 가능");
+            console.log(product['i love']);
+            // console.log(product.'i love'); 불가능
+        }
+
+        function test2() {
+            let dog = {
+                name: '민지',
+                eat: function (food) {
+                    alert(this.name + '가 ' + food + '를 먹고 있네요~');
+                }
+            }
+            // 객체의 속성 중에 함수 자료형인 속성을 메소드라고 부른다.
+            dog.eat('바나나');
+        }
+        function test3() {
+            // 객체의 속성을 확인 할때 단순 for문이 아닌 for in문을 사용하자!
+            let student = {
+                name: '조민규',
+                kor: 100,
+                eng: 70,
+                math: 88
+            }
+
+            for (let key in student) {
+                console.log(key + " : " + student[key]);
+            }
+        }
+        function test4() {
+            let person = {};
+            console.log(person);
+
+            // 속성 추가
+            person.name = "임민수";
+            person.hobby = "토토";
+            person.job = "무직";
+            person.dream = "취직";
+
+            // 속성 삭제
+            console.log(person);
+            delete (person.dream);
+            console.log(person);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>객체 연습</h1>
+
+    <h3>객체 선언 및 호출</h3>
+    <button onclick="test1()">클릭!</button>
+
+    <h3>객체의 메소드 속성</h3>
+    <button onclick="test2()">클릭!!</button>
+
+    <h3>객체와 반복문</h3>
+    <button onclick="test3()">클릭!!!</button>
+
+    <h3>객체의 속성 추가</h3>
+    <button onclick="test4()">클릭!!!!</button>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.nav_wrapper{
+    min-width: 100px;
+    min-height: 100vh; /* 화면 높이만큼 채운다 */
+    list-style: none;
+    padding-top: 70px;
+}
+.nav_wrapper>li>div{
+    padding: 5px;
+}
+.nav_menu{
+    font-size: 1.1rem;
+}
+.nav_icon{
+    font-size: 1.6rem;
+    padding-bottom: 0;
+}
+ul>li>div:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+@media screen and (max-width:800px){
+    .nav_menu{
+        display: none;
+    }
+}
+@media screen and (max-width:500px) {
+    .nav_wrapper {
+        display: none;
+    }
+}

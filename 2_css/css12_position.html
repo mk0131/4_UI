@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Position</title>
+  <!--
+        static
+        relative
+        absolute
+        fixed
+    -->
+  <style>
+    #box {
+      width: 500px;
+      border: 1px dotted red;
+    }
+
+    p {
+      width: 130px;
+      height: 100px;
+    }
+
+    .myred {
+      background-color: red;
+      position: relative;
+      top: 50px;
+      z-index: 2;
+    }
+
+    .myblue {
+      background-color: blue;
+      position: absolute;
+      left: 100px;
+      top: 30px;
+    }
+
+    .mygreen {
+      background-color: green;
+      position: relative;
+      left: 30px;
+      top: -30px;
+    }
+
+    .myred:hover {
+      z-index: 100;
+    }
+
+    .myblue:hover {
+      z-index: 100;
+    }
+
+    .mygreen:hover {
+      z-index: 100;
+    }
+
+    #fixed {
+      width: 100px;
+      height: 200px;
+      background-color: black;
+      color: white;
+      position: fixed;
+      right: 50px;
+      top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <p class="myred"></p>
+    <p class="myblue"></p>
+    <p class="mygreen"></p>
+  </div>
+  <div id="fixed">fixed!!</div>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+</body>
+
+</html>

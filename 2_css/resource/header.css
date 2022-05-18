@@ -1,0 +1,79 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 3px black; /* 그림자 효과 주기 */
+    width: 100%; /* 화면 크기에 맞춰서 길이가 변한다 */
+    z-index: 10;
+    background-color: white;
+}
+.header_wrapper{
+    height: 50px;
+    display: flex;
+    justify-content: space-between; /* 가로축 간격을 일정하게 벌린다 */
+    align-items: center; /* 세로축 으로 정렬한다 */
+}
+.header_left{
+    height: 35px;
+    line-height: 35px; /* 해당 줄의 높이를 정한다 */
+}
+.header_menu{
+    border: none;
+    font-size: 1.5rem;
+    display: none;
+}
+.header_title{
+    font-size: 1.4rem;
+    margin-left: 10px;
+}
+
+.header_center{
+    width: 50%;
+}
+.header_form{
+    display: flex;
+    max-width: 100%;
+}
+.header_input_text{
+    width: calc(100% - 70px); /* 전체에서 뺀만큼 크기 지정 */
+    height: 30px;
+    border-right: none;
+}
+.header_input_button{
+    width: 70px;
+    border-left: none;
+}
+.header_right{
+    display: flex;
+    margin-right: 10px;
+}
+.header_search{
+    border: none;
+    background-color: transparent; /* 투명 */
+    font-size: 1.5rem;
+
+    display: none;
+}
+.header_img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: black;
+   /* background-image: url(../../1_html/image/b3.jpg); 이미지 넣기
+    background-size: 35px 35px; 이미지 크기 조정 */
+}
+
+@media screen and (max-width: 500px){ /* 화면이 0~500px 사이 */
+    .header_search{
+        display: block;
+    }
+    .header_menu{
+        display: block;
+    }
+    .header_title{
+        display: none;
+    }
+    .header_center{
+        display: none;
+    }
+}

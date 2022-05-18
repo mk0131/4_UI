@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function searchId() {
+            let doc = document.getElementById("test");
+            console.log(doc);
+            doc.innerHTML = "<b>id로 탐색합니다.</b>"
+            doc.style.color = "red";
+        }
+        function searchName() {
+            let doc = document.getElementsByName("test02");
+            console.log(doc);
+            doc[2].value = "name 속성으로 엘리먼트 탐색";
+        }
+        function searchTagName() {
+            let doc = document.getElementsByTagName('p');
+            doc[3].innerHTML = "tagName 으로 탐색";
+            doc[3].style.color = "blue";
+        }
+        function searchQS() {
+            let doc = document.querySelector("p"); // 첫번째 p
+            let doc2 = document.querySelectorAll("p");
+            console.log(doc);
+            console.log(doc2);
+
+            doc2[4].innerHTML = "querySelectorAll(css선택자)"
+
+        }
+    </script>
+</head>
+
+<body>
+    <p>DOM(Document Object Model) 탐색 함수</p>
+    <p id="test" onclick="searchId()">1. 엘리먼트의 id로 탐색: 엘리먼트 하나를 선택(중복불가)</p>
+
+    <p onclick="searchName()">2. 엘리먼트의 name으로 탐색: 엘리먼트 여러개를 선택
+        <br>
+        <input type="text" name="test02" value="" size="100%"><br>
+        <input type="text" name="test02" value="" size="100%"><br>
+        <input type="text" name="test02" value="" size="100%"><br>
+    </p>
+    <p onclick="searchTagName()">3.엘리먼트의 태그 이름으로 탐색: 엘리멘트 여러개를 선택</p>
+
+    <p onclick="searchQS()">4. css의 선택자를 이용하여 탐색: 엘리먼트 여러개를 선택</p>
+</body>
+
+</html>

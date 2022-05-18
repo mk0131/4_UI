@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>시멘틱 구조</title>
-    <!--
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>시멘틱 구조</title>
+  <!--
         header: 제목,로고,아이콘...
         nav: 탐색링크...
         section: 컨텐츠를 주제별로 묶고 싶을 경우..
@@ -13,54 +14,59 @@
         aside: 광고, 메인과 상관없는 내용 정의
         footer: 저작권, 저자, 연락처....
     -->
-    <style type="text/css">
-      div {
-        border: 1px dashed red;
-        margin: 10px;
-      }
-      #container {
-        height: 400px;
-      }
-      #left {
-        width: 60%;
-        height: 85%;
-        float: left;
-      }
-      #right {
-        width: 30%;
-        height: 85%;
-        float: right;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="header">
-      <h1>검색창</h1>
-      <div>
-        <span>
-          <a href="html05_a.html">메뉴1</a>
-        </span>
-        <span>
-          <a href="html09_form01.html">메뉴2</a>
-        </span>
-        <span>
-          <a href="html03_list.html">메뉴3</a>
-        </span>
-        <span>
-          <a href="html10_form02.html">메뉴4</a>
-        </span>
-      </div>
+  <style type="text/css">
+    div {
+      border: 1px dashed red;
+      margin: 10px;
+    }
+
+    #container {
+      height: 400px;
+    }
+
+    #left {
+      width: 60%;
+      height: 85%;
+      float: left;
+    }
+
+    #right {
+      width: 30%;
+      height: 85%;
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <h1>검색창</h1>
+    <div>
+      <span>
+        <a href="html05_a.html">메뉴1</a>
+      </span>
+      <span>
+        <a href="html09_form01.html">메뉴2</a>
+      </span>
+      <span>
+        <a href="html03_list.html">메뉴3</a>
+      </span>
+      <span>
+        <a href="html10_form02.html">메뉴4</a>
+      </span>
     </div>
-    <div id="container">
-      <div id="left">
-        <p>왼쪽 본문 내용</p>
-      </div>
-      <div id="right">
-        <p>오른쪽 본문 내용</p>
-      </div>
+  </div>
+  <div id="container">
+    <div id="left">
+      <p>왼쪽 본문 내용</p>
     </div>
-    <div id="footer">
-      <p>copyright &copy; all rights reserved...</p>
+    <div id="right">
+      <p>오른쪽 본문 내용</p>
     </div>
-  </body>
+  </div>
+  <div id="footer">
+    <p>copyright &copy; all rights reserved...</p>
+  </div>
+</body>
+
 </html>

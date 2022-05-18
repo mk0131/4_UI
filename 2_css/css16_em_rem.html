@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!--
+        em : 부모요소 text 크기
+        rem : 루트요소 text 크기
+    -->
+  <style>
+    #parent {
+      font-size: 24px;
+    }
+
+    #child {
+      width: 200px;
+      height: 200px;
+      background-color: hotpink;
+
+      font-size: 2rem;
+      padding: 1rem;
+      margin: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="parent">
+    <div id="child">em&rem 연습</div>
+  </div>
+</body>
+
+</html>

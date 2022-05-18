@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습3</title>
+    <style>
+        fieldset {
+            background-color: lightgray;
+            width: 400px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        /* function sel(element){
+            if(element.checked == true && element.value = "title"){
+               let div = document.getElementById("titleBox").style.display = "block";
+               let div2 = document.getElementById("dateBox").style.display = "none";
+               let div3 = document.getElementById("writerBox").style.display = "none";
+            } else if(element.checked == true && element.value = "date"){
+
+            } else if(element.checked == true && element.value = "write"){
+
+            }
+          }
+       */
+        function sel() {
+            let check_length = document.getElementsByName("menu").length;
+            let div = document.getElementById("titleBox");
+            let div2 = document.getElementById("dateBox");
+            let div3 = document.getElementById("writerBox");
+            for (let i = 0; i < check_length; i++) {
+                if (document.getElementsByName("menu")[i].checked == true) {
+                    if (document.getElementsByName("menu")[i].value == "title") {
+                        div.style.display = "block";
+                        div2.style.display = "none";
+                        div3.style.display = "none";
+                        div.style.backgroundColor = "orange";
+                        div.style.width = "500px";
+                        div.style.padding = "10px";
+                        div.innerHTML = "검색할 제목을 입력하세요: <br><input type='text' style='width:400px';> &nbsp; <input type='submit' value='검색'>";
+                    } else if (document.getElementsByName("menu")[i].value == "date") {
+                        div.style.display = "none";
+                        div2.style.display = "block";
+                        div3.style.display = "none";
+                        div2.style.backgroundColor = "orange";
+                        div2.style.width = "500px";
+                        div2.style.padding = "10px";
+                        div2.innerHTML = "검색할 날짜를 선택하세요: <br> <input type='date'> - <input type='date'> &nbsp; <input type='submit' value='검색'>";
+                    } else {
+                        div.style.display = "none";
+                        div2.style.display = "none";
+                        div3.style.display = "block";
+                        div3.style.backgroundColor = "orange";
+                        div3.style.width = "500px";
+                        div3.style.padding = "10px";
+                        div3.innerHTML = "검색할 작성자 아이디를 검색하세요: <br><input type='text' style='width:200px';> &nbsp; <input type='submit' value='검색'>"
+
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>연습 2</h2>
+    <fieldset>
+        <legend>검색할 항목을 선택하세요.</legend>
+        <input type="radio" name="menu" value="title" onclick="sel()"><label>제목</label>
+        <input type="radio" name="menu" value="date" onclick="sel()"><label>날짜</label>
+        <input type="radio" name="menu" value="writer" onclick="sel()"><label>작성자</label>
+        <!--
+        <input type="radio" name="menu" value="title" id="title" onclick="sel(this)"><label>제목</label>
+        <input type="radio" name="menu" value="date" id="date" onclick="sel(this)"><label>날짜</label>
+        <input type="radio" name="menu" value="writer" id="writer" onclick="sel(this)"><label>작성자</label>
+        -->
+    </fieldset>
+    <hr>
+    <div id="titleBox"></div>
+    <div id="dateBox"></div>
+    <div id="writerBox"></div>
+</body>
+
+</html>
