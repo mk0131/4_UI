@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 400px;
+            vertical-align: middle;
+            /*텍스트 이미지 옆에 붙이기*/
+        }
+
+        a {
+            font-size: 50px;
+            text-decoration: none;
+            /* 밑줄 제거 */
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let cnt = 1;
+
+            let img = document.querySelector("img");
+            let atags = document.querySelectorAll("a");
+
+            // 왼쪽 a태그 클릭
+            atags[0].onclick = function () {
+                let imgAlt = img.getAttribute("alt");
+                if (imgAlt == "b01") {
+                    cnt = 3;
+                    img.setAttribute("alt", "b3");
+                    img.setAttribute("src", "image/b3.jpg");
+                } else {
+                    img.setAttribute("alt", "b" + (--cnt));
+                    img.setAttribute("src", "image/b" + cnt + ".jpg");
+                }
+            }
+
+            // 오른쪽 a태그 클릭
+            atags[1].onclick = function () {
+                let imgAlt = img.getAttribute("alt");
+                if (imgAlt == "b01") {
+                    cnt = 1;
+                    img.setAttribute("alt", "b1");
+                    img.setAttribute("src", "image/b1.jpg");
+                } else {
+                    img.setAttribute("alt", "b" + (++cnt));
+                    img.setAttribute("src", "image/b" + cnt + ".jpg");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <a href="#" id="lt">☜(ﾟヮﾟ☜)</a> <!-- #: 이동안함-->
+        <img src="image/b1.jpg" alt="b01">
+        <a href="#" id="rt">(☞ﾟヮﾟ)☞</a>
+    </div>
+</body>
+
+</html>

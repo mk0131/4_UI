@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom 추가 이동</title>
+    <style>
+        p {
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        let cnt = 0;
+        function addAppend() {
+
+            cnt++;
+            let fieldset = document.getElementById("addele");
+            let p = document.createElement("p");
+
+            // 1.
+            // let txt = document.createTextNode("자식태그들 중 마지막에 붙여 넣는다. " + cnt);
+            // p.appendChild(txt);
+
+            // 2.
+            p.textContent = "자식태그들 중 마지막에 붙여 넣는다! " + cnt
+            fieldset.appendChild(p);
+        }
+
+        function addBefore() {
+
+            let fieldset = document.getElementById("addele");
+
+            let p = document.createElement("p");
+            p.textContent = "엘리먼트의 앞에 붙여 넣는다! " + cnt++;
+
+            let div = document.querySelector("fieldset > div");
+            fieldset.insertBefore(p, div);
+        }
+        function moveEle() {
+            let moveE = document.querySelector("fieldset").children[1]; // children = element 만 가져옴
+            let addE = document.body;
+
+            addE.appendChild(moveE);
+        }
+        function addTest() {
+            let add = document.getElementById("test01");
+            let div = document.createElement("div");
+            div.textContent = "dom test";
+            add.appendChild(div);
+        }
+        function moveTest() {
+            let add = document.getElementById("test02");
+            for (let i = 0; i < document.querySelector("#test01").children.length; i++) {
+                let div = document.querySelector("#test01").children[i];
+                add.appendChild(div);
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>태그 추가하기</h1>
+    <button onclick="addAppend()">appendChild()</button>
+    <button onclick="addBefore()">insertBefore()</button>
+    <button onclick="moveEle()">appendChild를 이용한 엘리먼트 이동</button>
+
+    <fieldset id="addele">
+        <legend>태그태그</legend>
+        <div>div 태그</div>
+    </fieldset>
+
+    <h3>문제 1: test01태그에 "dom test"라는 내용을 가진 div태그 추가해보자.
+        <button onclick="addTest()">클릭!</button>
+    </h3>
+
+    <h3>문제 2: test01태그에 추가된 태그들을 test02로 이동시켜보자.
+        <button onclick="moveTest()">클릭!!</button>
+    </h3>
+
+    *test01
+    <div id="test01"></div>
+    *test02
+    <div id="test02"></div>
+</body>
+
+</html>

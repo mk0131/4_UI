@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function eleCreate() {
+            let div = document.createElement("div");
+            // <div></div> 생성
+
+            let text = document.createTextNode("엘리먼트 생성 메소드");
+            div.appendChild(text);
+            // <div>엘리먼트 생성 메소드</div>
+
+            // 1.
+            let attr = document.createAttribute("style");
+            // style=""
+            attr.nodeValue = "border:2px solid blue; color:red";
+
+            div.setAttributeNode(attr);
+            // <div style="border:2px solid blue; color:red">엘리먼트 생성 메소드</div>
+
+            // 2.
+            div.setAttribute("class", "test");
+            // <div style="border:2px solid blue; color:red" class="test">엘리먼트 생성 메소드</div>
+
+            document.body.appendChild(div); // body 에 넣어서 화면에 띄우기
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="eleCreate()">생성!</button>
+</body>
+
+</html>
