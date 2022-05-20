@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div").find("b").css({ "font-size": "30px", "color": "red" }); // find() 자식의자식의자식.. 전부다 찾아낸다
+            $("div").children("#chd").text("2.children()");
+            $("#chd").parent().css("background-color", "skyblue");
+            $("p>b").parents("body").css("background-color", "khaki"); // parents() 부모를 끝까지 찾아간다
+            $("p").eq(0).next().css({ "font-size": "50px", "color": "blue" }) // 첫번째 p 태그를 선택했지만 next() 로 다음 p 태그가 변한다 nextALL() 은 다음부터 모두다 변한다
+        })
+    </script>
+</head>
+
+<body>
+    <pre>
+        <b>find("selector") : 선택한 엘리먼트의 자손들 중에 탐색하고자 하는 엘리먼트를 찾는다.</b>
+        <b>children("selector") : 선택한 엘리먼트의 자식요소들 중에 탐색 하고자 하는 엘리먼트를 찾는다.</b>
+        <b>parent()/parents() : 선택한 엘리먼트의 부모요소를 찾는다.</b>
+        <b>next("selector") : 선택한 엘리먼트 다음에 따라오는 요소를 찾는다.</b>
+    </pre>
+    <div>
+        <p><b>1</b></p>
+        <p id="chd">2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+</body>
+
+</html>
