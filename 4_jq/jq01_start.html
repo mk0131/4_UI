@@ -11,22 +11,68 @@
         function test() {
             // id가 list01인 요소의 자식인 li를 찾아서
             // 그중 두번째 요소에 배경색을 pink로 바꿔보자
-            let li = document.getElementsByTagName("li")[1];
-            li.style.backgroundColor = "pink";
+
+            /* let li = document.getElementsByTagName("li")[1];
+              li.style.backgroundColor = "pink"; */
+
+            // jQuery
+            $("#list01 > li").eq(1).css("background-color", "pink");
+
+        }
+        // window.onload=function(){ };
+        // jQuery(document).ready(function () { });
+        // $(document).ready(function () { });
+        // $(function () { }); // 화면이 다 로드 되면실행
+
+        $(function () {
+            $("img").click(function () {
+                alert("이미지를 클릭했습니다.");
+                $(this).hide(); // 클릭하면 숨기기
+            })
+        })
+
+        function showImg() {
+            $("img").show();
+        }
+
+        function resizeImg() {
+            //  $("img").css("width", "100px").css("height", "50px");
+            $("img").css({ "width": "100px", "height": "100px" });
+        }
+
+        function addImg() {
+            $("img").last().after("<img src = 'image/b2.jpg'>"); // 제일 마지막 이미지 옆에 추가
+        }
+
+        function toggleImg() {
+            $("img").toggle(); // hide + show
         }
     </script>
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>jquery 시작</h1>
     <ul id="list01">
         <li>1. 셀렉터 표현식</li>
-        <li>2. DOM탐색</li>
+        <li>2. DOM 탐색</li>
         <li>3. 이벤트</li>
         <li>4. 이펙트</li>
         <li>5. Ajax</li>
     </ul>
     <button onclick="test()">리스트 강조하기</button>
+    <hr>
+    <button onclick="showImg()">이미지 보이기</button>
+    <button onclick="resizeImg()">이미지 크기변경</button>
+    <button onclick="addImg()">이미지 추가</button>
+    <button onclick="toggleImg()">이미지 보이기/숨기기</button>
+    <div>
+        <img alt="test" src="image/b1.jpg">
+    </div>
 </body>
 
 </html>
