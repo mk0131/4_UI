@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+        }
+
+        .onoffimg {
+            display: none;
+        }
+
+        .addsize {
+            width: 300px;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                $("img").toggleClass("onoffimg");
+            })
+            $("img").click(function () {
+                // $("img").toggleClass("addsize");
+                if ($(this).hasClass("addsize")) {
+                    $(this).removeClass("addsize");
+                } else {
+                    $(this).addClass("addsize");
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn">이미지 on/off</button>
+    <br><br>
+    <img src="image/b1.jpg" title="이미지1번">
+    <img src="image/b2.jpg" title="이미지2번">
+    <img src="image/b3.jpg" title="이미지3번">
+</body>
+
+</html>
