@@ -29,16 +29,43 @@ table tr:nth-child(odd) {
 <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
 <script>
 	$(function() {
-		$("#emp_search").click(function() {
-			let empid = $("input[name=empid]").val();
+		$("#emp_search").click(
+				function() {
+					let empid = $("input[name=empid]").val();
 
-			if (!isNaN(empid) && empid.length > 2) {
-				alert(empid);
-			} else {
-				alert("사원번호를 제대로 입력해 주세요!");
-			}
-		})
-	})
+					if (!isNaN(empid) && empid.length > 2) {
+						// alert(empid);
+						$.ajax({
+							url : "emplist.xml", // 전송(통신)할 주소
+							method : "get", // 서버에 전송하는 방식
+							dataType : "xml", // 전송받을 데이터 타입(xml, json..)
+							// data:{id:mainId}   // 서번에 전송할 데이터
+							success : function(data) { // 통신에 성공했을 때 실행
+								let empInfo = $(data).find(
+										"EMPLOYEE_ID:contains(" + empid + ")")
+										.parent();
+
+								if (empInfo.is("ROW")) {
+									$("table input").each(
+											function(i) {
+												$(this).val(
+														$(empInfo).children()
+																.eq(i).text());
+											});
+								} else {
+									alert("검색대상이 존재하지 않습니다!!");
+								}
+
+							},
+							error : function() { // 통신에 실패했을 때 실행m
+								alert("통신실패");
+							}
+						});
+					} else {
+						alert("사원번호를 제대로 입력해 주세요!");
+					}
+				});
+	});
 </script>
 </head>
 <body>
